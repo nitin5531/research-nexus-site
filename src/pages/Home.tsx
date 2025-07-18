@@ -52,7 +52,7 @@ const Home = () => {
                 </div>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                   Precision Research for 
-                  <span className="gradient-text block mt-2"> Strategic Insights</span>
+                  <span className="gradient-text block mt-2 leading-tight">Strategic Insights</span>
                 </h1>
               </div>
               <p className="text-xl text-muted-foreground mb-10 max-w-lg leading-relaxed">

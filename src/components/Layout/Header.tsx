@@ -27,7 +27,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/6422c171-91f8-4fbe-8705-f58cced749db.png" 
                 alt="Clarity Research" 
-                className="h-12 w-auto transition-transform duration-300 group-hover:scale-110"
+                className="h-16 w-auto transition-transform duration-300 group-hover:scale-110"
               />
             </div>
           </Link>
