@@ -18,16 +18,16 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm">
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
               <img 
-                src="/lovable-uploads/1bb50883-a0e2-48a3-bf37-79d255a7651a.png" 
+                src="/lovable-uploads/6422c171-91f8-4fbe-8705-f58cced749db.png" 
                 alt="Clarity Research" 
-                className="h-10 w-auto transition-transform duration-300 group-hover:scale-110 animate-glow"
+                className="h-12 w-auto transition-transform duration-300 group-hover:scale-110"
               />
             </div>
           </Link>
