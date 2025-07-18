@@ -40,11 +40,14 @@ const Header = () => {
                 to={item.href}
                 className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
                   isActive(item.href) 
-                    ? "text-primary bg-primary/10" 
-                    : "text-foreground/80 hover:text-primary hover:bg-primary/5"
+                    ? "text-primary" 
+                    : "text-foreground/80 hover:text-primary"
                 }`}
               >
                 <span className="relative z-10">{item.name}</span>
+                {isActive(item.href) && (
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-6 h-0.5 bg-primary rounded-full"></div>
+                )}
               </Link>
             ))}
           </nav>
