@@ -40,15 +40,11 @@ const Header = () => {
                 to={item.href}
                 className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
                   isActive(item.href) 
-                    ? "text-primary bg-primary/10 shadow-lg" 
+                    ? "text-primary bg-primary/10" 
                     : "text-foreground/80 hover:text-primary hover:bg-primary/5"
                 }`}
               >
                 <span className="relative z-10">{item.name}</span>
-                {isActive(item.href) && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg border border-primary/30"></div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
             ))}
           </nav>
