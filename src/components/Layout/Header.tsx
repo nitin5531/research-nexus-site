@@ -52,13 +52,8 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* Empty space for future content */}
           <div className="hidden md:flex">
-            <Button asChild variant="default" className="btn-primary">
-              <Link to="/contact">
-                <span className="relative z-10">Get Started</span>
-              </Link>
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -88,13 +83,6 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="px-3 py-2">
-                <Button asChild variant="default" className="btn-primary w-full">
-                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                    <span className="relative z-10">Get Started</span>
-                  </Link>
-                </Button>
-              </div>
             </div>
           </div>
         )}
