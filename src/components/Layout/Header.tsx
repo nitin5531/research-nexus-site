@@ -1,34 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
-
-  useEffect(() => {
-    const controlNavbar = () => {
-      if (window.scrollY > 100) {
-        if (window.scrollY > lastScrollY) {
-          // scrolling down
-          setIsVisible(false);
-        } else {
-          // scrolling up
-          setIsVisible(true);
-        }
-      } else {
-        // at top
-        setIsVisible(false);
-      }
-      setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', controlNavbar);
-    return () => window.removeEventListener('scroll', controlNavbar);
-  }, [lastScrollY]);
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -41,7 +18,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0 glass-nav border-b border-white/20' : '-translate-y-full'}`}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm">
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -50,7 +27,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/6422c171-91f8-4fbe-8705-f58cced749db.png" 
                 alt="Clarity Research" 
-                className="h-16 w-auto transition-transform duration-300 group-hover:scale-110"
+                className="h-12 w-auto transition-transform duration-300 group-hover:scale-110"
               />
             </div>
           </Link>
