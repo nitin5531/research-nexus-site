@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -52,12 +54,17 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* Dark Mode Toggle */}
           <div className="hidden md:flex">
-            <Button asChild variant="default" className="btn-primary">
-              <Link to="/contact">
-                <span className="relative z-10">Get Started</span>
-              </Link>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="h-9 w-9"
+            >
+              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
             </Button>
           </div>
 
@@ -89,10 +96,15 @@ const Header = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button asChild variant="default" className="btn-primary w-full">
-                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                    <span className="relative z-10">Get Started</span>
-                  </Link>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="h-9 w-9 w-full"
+                >
+                  <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                  <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  <span className="sr-only">Toggle theme</span>
                 </Button>
               </div>
             </div>
